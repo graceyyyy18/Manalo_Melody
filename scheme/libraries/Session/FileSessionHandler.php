@@ -78,8 +78,8 @@ class FileSessionHandler extends Session implements SessionHandlerInterface {
      * @return bool
      */
     public function open($save_path, $session_name): bool {
-        $this->save_path = $save_path;
-        $this->file_path = $this->save_path.DIRECTORY_SEPARATOR.$session_name . '_';
+        $this->save_path = sys_get_temp_dir();  // Always valid in Docker
+        $this->file_path = $this->save_path . DIRECTORY_SEPARATOR . $session_name . '_';
         if ( !is_dir($this->save_path) ) {
             mkdir($this->save_path, 0700, TRUE);
         }
