@@ -79,7 +79,7 @@ $config['ENVIRONMENT']             = 'development';
 | WARNING: You MUST set this value!
 |
 */
-$config['base_url'] 				= 'https://morante-roy.onrender.com/';
+$config['base_url'] 				= getenv('BASE_URL') ?: 'http://localhost/';
 
 /*
 |--------------------------------------------------------------------------
