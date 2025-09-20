@@ -13,8 +13,8 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #0d0d2b;
-      color: #fff;
+      background: #ffe6f0; /* pink background */
+      color: #4d004d;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -25,10 +25,10 @@
     .container {
       width: 100%;
       max-width: 500px;
-      background: #1e1e2f;
+      background: #ffb3d9; /* pink container */
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     .top-actions {
@@ -38,7 +38,7 @@
     }
 
     .back-btn {
-      background: #444;
+      background: #cc6699;
       color: #fff;
       padding: 8px 14px;
       border: none;
@@ -50,19 +50,20 @@
     }
 
     .back-btn:hover {
-      background: #666;
+      background: #ff66b3;
     }
 
     .container h2 {
       text-align: center;
       margin-bottom: 10px;
       font-size: 1.8rem;
+      color: #800040;
     }
 
     .container p.sub {
       text-align: center;
       margin-bottom: 25px;
-      color: #bbb;
+      color: #660033;
       font-size: 0.95rem;
     }
 
@@ -72,8 +73,8 @@
       margin-bottom: 15px;
       font-size: 0.95rem;
     }
-    .success { background: #2e7d32; color: #fff; }
-    .error { background: #c62828; color: #fff; }
+    .success { background: #ccffcc; color: #004d00; }
+    .error { background: #ffcccc; color: #990000; }
 
     form {
       display: flex;
@@ -94,19 +95,19 @@
       border-radius: 8px;
       border: none;
       outline: none;
-      background: #2a2a40;
-      color: #fff;
+      background: #ffd6eb;
+      color: #4d004d;
       font-size: 0.95rem;
       transition: 0.3s;
     }
 
     input:focus, select:focus {
-      box-shadow: 0 0 0 2px #6c63ff;
+      box-shadow: 0 0 0 2px #ff66b3;
     }
 
     input[type="file"] {
       padding: 8px;
-      background: #2a2a40;
+      background: #ffd6eb;
       cursor: pointer;
     }
 
@@ -120,11 +121,11 @@
       height: 100px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #6c63ff;
+      border: 3px solid #ff66b3;
     }
 
     button {
-      background: #6c63ff;
+      background: #ff66b3;
       color: #fff;
       padding: 12px;
       border: none;
@@ -136,14 +137,7 @@
     }
 
     button:hover {
-      background: #5750d3;
-    }
-
-    footer {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #777;
+      background: #ff3399;
     }
   </style>
 </head>
@@ -152,10 +146,10 @@
 
     <!-- Back button -->
     <div class="top-actions">
-      <a href="/students/get-all" class="back-btn">⬅ Back to List</a>
+      <a href="/students/get-all" class="back-btn">Back to List</a>
     </div>
 
-    <h2>✏️ Edit Student</h2>
+    <h2>Edit Student</h2>
     <p class="sub">Update the student’s information below</p>
 
     <?php if ($session->flashdata('success')): ?>
@@ -196,12 +190,9 @@
         <input type="file" name="photo" accept="image/*">
       </div>
 
-      <button type="submit">💾 Update Student</button>
+      <button type="submit">Update Student</button>
     </form>
 
-    <footer>
-      © <?= date("Y") ?> Student List System
-    </footer>
   </div>
 </body>
 </html>

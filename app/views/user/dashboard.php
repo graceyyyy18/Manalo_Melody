@@ -11,8 +11,8 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #0d0d2b;
-      color: #fff;
+      background: #ffe6f0; /* pink background */
+      color: #4d004d;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,22 +23,23 @@
     .container {
       width: 100%;
       max-width: 450px;
-      background: #1e1e2f;
+      background: #ffb3d9; /* pink container */
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       text-align: center;
     }
 
     h2 {
       margin-bottom: 10px;
       font-size: 1.8rem;
+      color: #800040;
     }
 
     .welcome {
       font-size: 1.2rem;
       font-weight: 600;
-      color: #fff;
+      color: #660033;
       margin-bottom: 20px;
     }
 
@@ -47,8 +48,8 @@
       border-radius: 8px;
       margin-bottom: 20px;
     }
-    .success { background: #2e7d32; color: #fff; }
-    .error { background: #c62828; color: #fff; }
+    .success { background: #ccffcc; color: #004d00; }
+    .error { background: #ffcccc; color: #990000; }
 
     .actions {
       display: flex;
@@ -61,7 +62,7 @@
       display: block;
       padding: 12px;
       border-radius: 8px;
-      background: #6c63ff;
+      background: #ff66b3;
       color: #fff;
       font-weight: 600;
       text-decoration: none;
@@ -69,24 +70,15 @@
     }
 
     .btn:hover {
-      background: #5750d3;
+      background: #ff3399;
     }
 
     .logout {
-      background: #c62828;
+      background: #cc6699;
     }
 
     .logout:hover {
-      background: #a61d1d;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #777;
+      background: #ff3385;
     }
 
     @media (max-width: 480px) {
@@ -102,24 +94,18 @@
 <body>
 
   <div class="container">
-    <h2>🏠 Dashboard</h2>
-    <p class="welcome">
-      Welcome 👋
-    </p>
+    <h2>Dashboard</h2>
+    <p class="welcome">Welcome</p>
 
     <?php if ($session->flashdata('success')): ?>
       <div class="flash success"><?= htmlspecialchars($session->flashdata('success')) ?></div>
     <?php endif; ?>
 
     <div class="actions">
-      <a class="btn" href="/user/profile">👤 Profile</a>
-      <a class="btn logout" href="/auth/logout">🚪 Logout</a>
+      <a class="btn" href="/user/profile">Profile</a>
+      <a class="btn logout" href="/auth/logout">Logout</a>
     </div>
   </div>
-
-  <footer>
-    © <?= date("Y") ?> Student List System
-  </footer>
 
 </body>
 </html>

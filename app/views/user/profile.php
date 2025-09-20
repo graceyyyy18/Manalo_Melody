@@ -13,8 +13,8 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #0d0d2b;
-      color: #fff;
+      background: #ffe6f0; /* pink background */
+      color: #4d004d;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -25,22 +25,23 @@
     .container {
       width: 100%;
       max-width: 500px;
-      background: #1e1e2f;
+      background: #ffb3d9; /* pink container */
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    .container h1 {
+    h1 {
       text-align: center;
       margin-bottom: 10px;
       font-size: 2rem;
+      color: #800040;
     }
 
-    .container p {
+    p {
       text-align: center;
       margin-bottom: 20px;
-      color: #bbb;
+      color: #660033;
     }
 
     .flash {
@@ -48,8 +49,8 @@
       border-radius: 8px;
       margin-bottom: 15px;
     }
-    .success { background: #2e7d32; color: #fff; }
-    .error { background: #c62828; color: #fff; }
+    .success { background: #ccffcc; color: #004d00; }
+    .error { background: #ffcccc; color: #990000; }
 
     .profile-img {
       width: 120px;
@@ -57,7 +58,7 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
-      border: 3px solid #6c63ff;
+      border: 3px solid #ff66b3;
     }
 
     form {
@@ -81,18 +82,18 @@
     }
 
     input {
-      background: #2a2a40;
-      color: #fff;
+      background: #ff99cc;
+      color: #4d004d;
       outline: none;
       transition: 0.3s;
     }
 
     input:focus {
-      box-shadow: 0 0 0 2px #6c63ff;
+      box-shadow: 0 0 0 2px #ff66b3;
     }
 
     button {
-      background: #6c63ff;
+      background: #ff66b3;
       color: #fff;
       font-weight: 600;
       cursor: pointer;
@@ -100,7 +101,7 @@
     }
 
     button:hover {
-      background: #5750d3;
+      background: #ff3399;
     }
 
     .actions {
@@ -113,7 +114,7 @@
     .btn {
       flex: 1;
       text-align: center;
-      background: #6c63ff;
+      background: #ff66b3;
       padding: 10px;
       border-radius: 8px;
       text-decoration: none;
@@ -122,35 +123,22 @@
       transition: 0.3s;
     }
 
-    .btn:hover {
-      background: #5750d3;
-    }
-
+    .btn:hover { background: #ff3399; }
     .logout {
-      background: #c62828;
+      background: #cc6699;
     }
-
-    .logout:hover {
-      background: #a12020;
-    }
-
-    footer {
-      margin-top: 15px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #777;
-    }
+    .logout:hover { background: #ff3385; }
 
     @media (max-width: 480px) {
       .container { padding: 20px; }
-      .container h1 { font-size: 1.6rem; }
+      h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>👤 My Profile</h1>
+    <h1>My Profile</h1>
     <p>Manage and update your account details</p>
 
     <?php if ($session->flashdata('success')): ?>
@@ -184,17 +172,13 @@
       <label>Update Photo</label>
       <input type="file" name="photo" accept="image/*">
 
-      <button type="submit">💾 Update Profile</button>
+      <button type="submit">Update Profile</button>
     </form>
 
     <div class="actions">
-      <a class="btn" href="/user/dashboard">🏠 Dashboard</a>
-      <a class="btn logout" href="/auth/logout">🚪 Logout</a>
+      <a class="btn" href="/user/dashboard">Dashboard</a>
+      <a class="btn logout" href="/auth/logout">Logout</a>
     </div>
-
-    <footer>
-      © <?= date("Y") ?> Student List System
-    </footer>
   </div>
 
 </body>
